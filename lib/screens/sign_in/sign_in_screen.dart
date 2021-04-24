@@ -41,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Get.to(SignInAdmin());
+                          Get.to(() => SignInAdmin());
                         },
                         child: Container(
                           height: 50,
