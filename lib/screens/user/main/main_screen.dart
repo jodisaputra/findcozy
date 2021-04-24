@@ -1,7 +1,7 @@
-import 'package:findcozy/screens/booking/booking_screen.dart';
-import 'package:findcozy/screens/favorite/favorite_screen.dart';
-import 'package:findcozy/screens/home/home_screen.dart';
-import 'package:findcozy/screens/profile/profile_screen.dart';
+import 'package:findcozy/screens/user/booking/booking_screen.dart';
+import 'package:findcozy/screens/user/favorite/favorite_screen.dart';
+import 'package:findcozy/screens/user/home/home_screen.dart';
+import 'package:findcozy/screens/user/profile/profile_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 

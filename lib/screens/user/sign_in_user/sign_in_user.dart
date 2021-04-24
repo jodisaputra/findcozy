@@ -1,5 +1,7 @@
+import 'package:findcozy/screens/user/home/home_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignInUser extends StatefulWidget {
   @override
@@ -51,7 +53,9 @@ class _SignInUserState extends State<SignInUser> {
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.offAll(HomeScreen());
+                      },
                       color: darkBlue,
                       child: Text(
                         'Login',

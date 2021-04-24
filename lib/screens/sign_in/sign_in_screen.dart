@@ -1,5 +1,5 @@
-import 'package:findcozy/screens/sign_in_admin/sign_in_admin.dart';
-import 'package:findcozy/screens/sign_in_user/sign_in_user.dart';
+import 'package:findcozy/screens/admin/sign_in_admin/sign_in_admin.dart';
+import 'package:findcozy/screens/user/sign_in_user/sign_in_user.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
