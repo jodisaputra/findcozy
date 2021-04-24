@@ -1,4 +1,4 @@
-import 'package:findcozy/screens/user/home/home_screen.dart';
+import 'package:findcozy/screens/user/main/main_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,7 +54,7 @@ class _SignInUserState extends State<SignInUser> {
                     height: 50,
                     child: MaterialButton(
                       onPressed: () {
-                        Get.offAll(HomeScreen());
+                        Get.offAll(MainScreen());
                       },
                       color: darkBlue,
                       child: Text(

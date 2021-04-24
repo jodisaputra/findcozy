@@ -65,7 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Get.to(SignInUser());
+                          Get.to(() => SignInUser());
                         },
                         child: Container(
                           color: darkBlue,

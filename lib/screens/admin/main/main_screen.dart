@@ -1,7 +1,6 @@
-import 'package:findcozy/screens/user/booking/booking_screen.dart';
-import 'package:findcozy/screens/user/favorite/favorite_screen.dart';
-import 'package:findcozy/screens/user/home/home_screen.dart';
-import 'package:findcozy/screens/user/profile/profile_screen.dart';
+import 'package:findcozy/screens/admin/akun/akun_screen.dart';
+import 'package:findcozy/screens/admin/home/home_screen.dart';
+import 'package:findcozy/screens/admin/kelola/kelola_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -12,14 +11,13 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   PageController _pageController = PageController();
+
   List<Widget> _screens = [
     HomeScreen(),
-    FavoriteScreen(),
-    BookingScreen(),
-    ProfileScreen()
+    KelolaScreen(),
+    AkunScreen(),
   ];
 
-  // deklarasikan selectedIndex;
   int _selectedIndex = 0;
 
   void _onPageChanged(int index) {
@@ -47,44 +45,34 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
+              Icons.home_rounded,
               color: _selectedIndex == 0 ? lightBlue : grey,
             ),
             title: Text(
-              'Cari',
+              'Home',
               style: TextStyle(color: _selectedIndex == 0 ? lightBlue : grey),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite,
+              Icons.settings,
               color: _selectedIndex == 1 ? lightBlue : grey,
             ),
             title: Text(
-              'Favorite',
+              'Kelola',
               style: TextStyle(color: _selectedIndex == 1 ? lightBlue : grey),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_work,
+              Icons.person_rounded,
               color: _selectedIndex == 2 ? lightBlue : grey,
             ),
             title: Text(
-              'Booking',
+              'Akun',
               style: TextStyle(color: _selectedIndex == 2 ? lightBlue : grey),
             ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_rounded,
-              color: _selectedIndex == 3 ? lightBlue : grey,
-            ),
-            title: Text(
-              'Profile',
-              style: TextStyle(color: _selectedIndex == 3 ? lightBlue : grey),
-            ),
-          )
         ],
       ),
     );

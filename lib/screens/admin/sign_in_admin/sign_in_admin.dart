@@ -1,5 +1,7 @@
+import 'package:findcozy/screens/admin/main/main_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignInAdmin extends StatefulWidget {
   @override
@@ -51,7 +53,9 @@ class _SignInAdminState extends State<SignInAdmin> {
                     width: MediaQuery.of(context).size.width,
                     height: 50,
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.offAll(MainScreen());
+                      },
                       color: darkBlue,
                       child: Text(
                         'Login',
