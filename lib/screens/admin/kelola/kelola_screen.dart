@@ -1,3 +1,4 @@
+import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 
 class KelolaScreen extends StatefulWidget {
@@ -9,8 +10,39 @@ class _KelolaScreenState extends State<KelolaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-      title: Text('Kelola'),
-    ));
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: white,
+        title: Text(
+          'Kelola',
+          style: blackTextStyle.copyWith(
+            fontSize: 21,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Container(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
+              child: Column(
+                children: [
+                  Text(
+                    'Properti Saya',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

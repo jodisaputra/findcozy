@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 25),
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                 child: Row(
                   children: [
                     CircleAvatar(
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  padding: EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
