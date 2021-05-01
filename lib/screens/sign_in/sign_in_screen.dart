@@ -41,7 +41,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Get.to(() => SignInAdmin());
+                          Get.toNamed('/signinadmin');
                         },
                         child: Container(
                           height: 50,
@@ -65,7 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Get.to(() => SignInUser());
+                          Get.toNamed('/signinuser');
                         },
                         child: Container(
                           color: darkBlue,

@@ -5,12 +5,12 @@ import 'package:findcozy/screens/user/profile/profile_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreenUser extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _MainScreenUserState createState() => _MainScreenUserState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenUserState extends State<MainScreenUser> {
   PageController _pageController = PageController();
   List<Widget> _screens = [
     HomeScreen(),

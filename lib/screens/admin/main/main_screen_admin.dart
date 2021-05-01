@@ -4,12 +4,12 @@ import 'package:findcozy/screens/admin/kelola/kelola_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreenAdmin extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _MainScreenAdminState createState() => _MainScreenAdminState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenAdminState extends State<MainScreenAdmin> {
   PageController _pageController = PageController();
 
   List<Widget> _screens = [
