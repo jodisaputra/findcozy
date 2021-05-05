@@ -1,9 +1,15 @@
+import 'package:findcozy/models/user_model_admin.dart';
+import 'package:findcozy/providers/auth_provider_admin.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AkunScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var authProviderAdmin = Provider.of<AuthProviderAdmin>(context);
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -71,7 +77,12 @@ class AkunScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       InkWell(
-                        onTap: () {},
+                        onTap: () async {
+                          SharedPreferences prefs =
+                              await SharedPreferences.getInstance();
+                          authProviderAdmin.logout(prefs.getString('token'));
+                          Get.offAllNamed('/signin');
+                        },
                         child: Row(
                           children: [
                             Icon(Icons.logout, size: 35),

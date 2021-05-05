@@ -1,5 +1,7 @@
+import 'package:findcozy/providers/user_provider_admin.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    var userAdminProvider = Provider.of<UserProviderAdmin>(context);
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -29,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       width: 10,
                     ),
                     Text(
-                      'Jodi Saragih',
+                      userAdminProvider.useradmin.name,
                       style: darkBlueTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,

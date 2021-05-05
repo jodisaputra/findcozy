@@ -6,6 +6,25 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthProviderAdmin with ChangeNotifier {
+  Future logout(String token) async {
+    try {
+      var header = {'Authorization': 'Bearer ' + token};
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var response =
+          await http.get(Uri.parse(baseUrl + 'auth/logout'), headers: header);
+
+      print(response.statusCode);
+      if (response.statusCode == 200) {
+        prefs.remove('token');
+        prefs.remove('role');
+        return true;
+      }
+    } catch (e) {
+      print(e);
+      return null;
+    }
+  }
+
   Future<UserModelAdmin> login(String email, String password) async {
     try {
       var body = {

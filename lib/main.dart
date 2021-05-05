@@ -1,5 +1,6 @@
 import 'package:findcozy/providers/auth_provider_admin.dart';
 import 'package:findcozy/providers/user_provider_admin.dart';
+import 'package:findcozy/screens/admin/akun/akun_screen.dart';
 import 'package:findcozy/screens/admin/main/main_screen_admin.dart';
 import 'package:findcozy/screens/admin/sign_in_admin/sign_in_admin.dart';
 import 'package:findcozy/screens/admin/sign_up_admin/sign_up_admin.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/signin': (context) => SignInScreen(),
           '/signinadmin': (context) => SignInAdmin(),
           '/signupadmin': (context) => SignUpAdmin(),
+          '/profileadmin': (context) => AkunScreen(),
           '/mainscreenadmin': (context) => MainScreenAdmin(),
           '/signinuser': (context) => SignInUser(),
           '/mainscreenuser': (context) => MainScreenUser(),
