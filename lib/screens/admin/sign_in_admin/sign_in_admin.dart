@@ -100,8 +100,13 @@ class _SignInAdminState extends State<SignInAdmin> {
                                   if (user == null) {
                                     showError('email atau password salah');
                                   } else {
-                                    // Get.offAllNamed('/mainscreenadmin');
-                                    print('sukses');
+                                    if (user.roles != 'adminkost') {
+                                      showError(
+                                          'maaf, anda tidak memiliki akses');
+                                    } else {
+                                      userProviderAdmin.useradmin = user;
+                                      Get.offAllNamed('/mainscreenadmin');
+                                    }
                                   }
                                 }
                               },

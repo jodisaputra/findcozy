@@ -7,7 +7,7 @@ class UserModelAdmin {
   String phoneNumber;
   String profilePhoto;
   String gender;
-  String token;
+  static String token;
 
   UserModelAdmin(
       {this.id,
@@ -16,6 +16,7 @@ class UserModelAdmin {
       this.password,
       this.phoneNumber,
       this.profilePhoto,
+      this.roles,
       this.gender});
 
   // constructor data dari json
