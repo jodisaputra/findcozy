@@ -1,5 +1,7 @@
 import 'package:findcozy/providers/auth_provider_admin.dart';
+import 'package:findcozy/providers/auth_provider_user.dart';
 import 'package:findcozy/providers/user_provider_admin.dart';
+import 'package:findcozy/providers/user_provider_user.dart';
 import 'package:findcozy/screens/admin/akun/akun_screen.dart';
 import 'package:findcozy/screens/admin/home/home_screen_admin.dart';
 import 'package:findcozy/screens/admin/main/main_screen_admin.dart';
@@ -30,6 +32,12 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<AuthProviderAdmin>(
           create: (context) => AuthProviderAdmin(),
+        ),
+        ChangeNotifierProvider<UserProviderUser>(
+          create: (context) => UserProviderUser(),
+        ),
+        ChangeNotifierProvider<AuthProviderUser>(
+          create: (context) => AuthProviderUser(),
         )
       ],
       child: GetMaterialApp(

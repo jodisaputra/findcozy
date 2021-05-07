@@ -4,9 +4,9 @@ import 'package:flutter/foundation.dart';
 class UserProviderUser with ChangeNotifier {
   UserModelUser _useruser;
 
-  UserModelUser get useradmin => _useruser;
+  UserModelUser get useruser => _useruser;
 
-  set useradmin(UserModelUser newUser) {
+  set useruser(UserModelUser newUser) {
     _useruser = newUser;
     notifyListeners();
   }

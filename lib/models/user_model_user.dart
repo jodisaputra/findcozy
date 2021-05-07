@@ -7,7 +7,7 @@ class UserModelUser {
   String phoneNumber;
   String profilePhoto;
   String gender;
-  String token;
+  static String token;
 
   UserModelUser(
       {this.id,
@@ -16,6 +16,7 @@ class UserModelUser {
       this.password,
       this.phoneNumber,
       this.profilePhoto,
+      this.roles,
       this.gender});
 
   // constructor data dari json
@@ -25,8 +26,8 @@ class UserModelUser {
     email = json['email'];
     password = json['password'];
     roles = json['roles'];
-    phoneNumber = json['phoneNumber'];
-    profilePhoto = json['profilePhoto'];
+    phoneNumber = json['phone_number'];
+    profilePhoto = json['profile_photo'];
     gender = json['gender'];
   }
 
