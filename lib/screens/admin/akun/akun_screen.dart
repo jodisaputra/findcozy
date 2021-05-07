@@ -1,5 +1,7 @@
 import 'package:findcozy/models/user_model_admin.dart';
 import 'package:findcozy/providers/auth_provider_admin.dart';
+import 'package:findcozy/providers/user_provider_admin.dart';
+import 'package:findcozy/services/services.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AkunScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var userProviderAdmin = Provider.of<UserProviderAdmin>(context);
     var authProviderAdmin = Provider.of<AuthProviderAdmin>(context);
     return Scaffold(
       body: SafeArea(
@@ -22,8 +25,8 @@ class AkunScreen extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 30.0,
-                      backgroundImage:
-                          NetworkImage('https://via.placeholder.com/150'),
+                      backgroundImage: NetworkImage(
+                          assetUrl + userProviderAdmin.useradmin.profilePhoto),
                       backgroundColor: Colors.transparent,
                     ),
                     SizedBox(
@@ -33,14 +36,14 @@ class AkunScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Jodi Saragih',
+                          userProviderAdmin.useradmin.name,
                           style: blackTextStyle.copyWith(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          '087732571273',
+                          userProviderAdmin.useradmin.phoneNumber,
                           style: blackTextStyle.copyWith(
                             fontSize: 18,
                           ),

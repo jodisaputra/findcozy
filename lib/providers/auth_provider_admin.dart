@@ -35,12 +35,13 @@ class AuthProviderAdmin with ChangeNotifier {
       var response =
           await http.post(Uri.parse(baseUrl + 'auth/login'), body: body);
 
-      // print(response.statusCode);
-      // print(response.body);
-
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
+
+        print(data['data']['user']);
+
         UserModelAdmin.token = data['data']['access_token'];
+
         var user = UserModelAdmin.fromJson(data['data']['user']);
 
         SharedPreferences prefs = await SharedPreferences.getInstance();

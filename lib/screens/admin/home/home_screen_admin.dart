@@ -1,17 +1,19 @@
 import 'package:findcozy/providers/user_provider_admin.dart';
+import 'package:findcozy/services/services.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreenAdmin extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenAdminState createState() => _HomeScreenAdminState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenAdminState extends State<HomeScreenAdmin> {
   @override
   Widget build(BuildContext context) {
     var userAdminProvider = Provider.of<UserProviderAdmin>(context);
+
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -23,10 +25,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage:
-                          NetworkImage('https://via.placeholder.com/150'),
-                      backgroundColor: Colors.transparent,
+                      radius: 30,
+                      child: ClipOval(
+                        child: Image.network(
+                          assetUrl + userAdminProvider.useradmin.profilePhoto,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 10,

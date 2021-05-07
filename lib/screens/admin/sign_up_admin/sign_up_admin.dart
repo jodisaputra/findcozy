@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:findcozy/models/user_model_admin.dart';
 import 'package:findcozy/providers/auth_provider_admin.dart';
 import 'package:findcozy/providers/user_provider_admin.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -13,6 +16,33 @@ class SignUpAdmin extends StatefulWidget {
 }
 
 class _SignUpAdminState extends State<SignUpAdmin> {
+  String dropdownValue = 'male';
+
+  void showError(message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.red,
+      ),
+    );
+  }
+
+  // upload image
+  File _image;
+  final picker = ImagePicker();
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        showError("gambar tidak dipilih");
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,13 +74,15 @@ class _SignUpAdminState extends State<SignUpAdmin> {
                     Center(
                       child: GestureDetector(
                         onTap: () {
-                          print('tes');
+                          getImage();
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.transparent,
-                          backgroundImage: AssetImage(
-                            'assets/image/avatar.jpg',
-                          ),
+                          backgroundImage: _image == null
+                              ? AssetImage(
+                                  'assets/image/avatar.jpg',
+                                )
+                              : FileImage(File(_image.path)),
                           radius: 60,
                         ),
                       ),
@@ -81,39 +113,52 @@ class _SignUpAdminState extends State<SignUpAdmin> {
                         labelText: 'No. Hp *',
                       ),
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Jenis Kelamin',
+                          style: greyTextStyle.copyWith(fontSize: 13),
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        DropdownButton(
+                          isExpanded: true,
+                          value: dropdownValue,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              dropdownValue = newValue;
+                            });
+                          },
+                          items: [
+                            DropdownMenuItem(
+                              value: "male",
+                              child: Text(
+                                'Laki-laki',
+                                style: blackTextStyle.copyWith(fontSize: 15),
+                              ),
+                            ),
+                            DropdownMenuItem(
+                              value: "female",
+                              child: Text(
+                                'Perempuan',
+                                style: blackTextStyle.copyWith(fontSize: 15),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                     SizedBox(height: 70),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 50,
                       child: MaterialButton(
-                        onPressed: () async {
-                          // if (emailController.text.isEmpty ||
-                          //     passwordController.text.isEmpty) {
-                          //   showError('Semua field harus diisi');
-                          // } else {
-                          //   setState(() {
-                          //     isLoading = true;
-                          //   });
-
-                          //   UserModelAdmin user = await authProviderAdmin.login(
-                          //       emailController.text, passwordController.text);
-                          //   setState(() {
-                          //     isLoading = false;
-                          //   });
-
-                          //   if (user == null) {
-                          //     showError('email atau password salah');
-                          //   } else {
-                          //     if (user.roles != 'adminkost') {
-                          //       showError(
-                          //           'Maaf, akun anda bukan role admin kost!');
-                          //     } else {
-                          Get.offAllNamed('/mainscreenadmin');
-                          // print('sukses');
-                          // }
-                          // }
-                          // }
-                        },
+                        onPressed: () async {},
                         color: darkBlue,
                         child: Text(
                           'Daftar',

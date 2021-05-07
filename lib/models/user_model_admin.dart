@@ -26,8 +26,8 @@ class UserModelAdmin {
     email = json['email'];
     password = json['password'];
     roles = json['roles'];
-    phoneNumber = json['phoneNumber'];
-    profilePhoto = json['profilePhoto'];
+    phoneNumber = json['phone_number'];
+    profilePhoto = json['profile_photo'];
     gender = json['gender'];
   }
 

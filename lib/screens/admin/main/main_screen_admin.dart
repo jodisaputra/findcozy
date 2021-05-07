@@ -1,5 +1,5 @@
 import 'package:findcozy/screens/admin/akun/akun_screen.dart';
-import 'package:findcozy/screens/admin/home/home_screen.dart';
+import 'package:findcozy/screens/admin/home/home_screen_admin.dart';
 import 'package:findcozy/screens/admin/kelola/kelola_screen.dart';
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +13,7 @@ class _MainScreenAdminState extends State<MainScreenAdmin> {
   PageController _pageController = PageController();
 
   List<Widget> _screens = [
-    HomeScreen(),
+    HomeScreenAdmin(),
     KelolaScreen(),
     AkunScreen(),
   ];

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -18,22 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   startSplashScreen() async {
     var duration = const Duration(seconds: 3);
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token = prefs.getString('token');
-    String role = prefs.getString('role');
-    if (token != null && role == 'adminkost') {
-      return Timer(duration, () {
-        Get.offNamed('/mainscreenadmin');
-      });
-    } else if (token != null && role == 'user') {
-      return Timer(duration, () {
-        Get.offNamed('/mainscreenuser');
-      });
-    } else if (token == null && role == null) {
-      return Timer(duration, () {
-        Get.offNamed('/signin');
-      });
-    }
+    return Timer(duration, () {
+      Get.offNamed('/signin');
+    });
   }
 
   @override

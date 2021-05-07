@@ -93,6 +93,7 @@ class _SignInAdminState extends State<SignInAdmin> {
                                       await authProviderAdmin.login(
                                           emailController.text,
                                           passwordController.text);
+
                                   setState(() {
                                     isLoading = false;
                                   });

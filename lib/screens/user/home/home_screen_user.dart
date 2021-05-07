@@ -1,7 +1,7 @@
 import 'package:findcozy/theme.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreenUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
